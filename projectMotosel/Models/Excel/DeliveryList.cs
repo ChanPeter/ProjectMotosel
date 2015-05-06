@@ -12,24 +12,25 @@ namespace projectMotosel.Models
     {
         [Key]
         public int DeliveryListId { get; set; }
-
-        [Key]
+        [Required]
         public int CustId { get; set; }
-
         public int EmpId { get; set; }
+        public int DeliveryId { get; set; }
         
         [Key]
-        public string ProductId { get; set; }
+        public string SKU { get; set; }
 
 
-        [ForeignKey("custId")]
+        [ForeignKey("CustId")]
         public virtual Customer Customer { get; set; }
-        [ForeignKey("empId")]
+        [ForeignKey("EmpId")]
         public virtual Employee Employee { get; set; }
-        [ForeignKey("ProductId")]
+        [ForeignKey("SKU")]
         public virtual Product Product { get; set; }
+        [ForeignKey("DeliveryId")]
+        public virtual Delivery Delivery { get; set; }
 
         [Required]
-        public int quantity { get; set; }
+        public int Quantity { get; set; }
     }
 }

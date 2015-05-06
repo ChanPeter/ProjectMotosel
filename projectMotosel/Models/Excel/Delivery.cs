@@ -14,9 +14,11 @@ namespace projectMotosel.Models
         [Required]
         public int EmpId { get; set; }
 
-        [ForeignKey("empId")]
+        [ForeignKey("EmpId")]
         public virtual Employee Employee { get; set; }
         public DateTime Date { get; set; }
+
+        public virtual ICollection<DeliveryList> DeliveryLists { get; set; }
 
     }
 }

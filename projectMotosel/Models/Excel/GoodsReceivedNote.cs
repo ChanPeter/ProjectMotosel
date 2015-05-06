@@ -23,7 +23,7 @@ namespace projectMotosel.Models
 
         [Required]
         public DateTime Date { get; set; }
-        public string notes { get; set; }
+        public string Notes { get; set; }
         
     }
 }

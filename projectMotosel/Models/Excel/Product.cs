@@ -10,7 +10,7 @@ namespace MotoselProject.Models
     {
         // ProductId == SKU
         [Key]
-        public string ProductId { get; set; }
+        public string SKU { get; set; }
 
         public string Description { get; set; }
 

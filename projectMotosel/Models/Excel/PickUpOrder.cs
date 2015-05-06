@@ -7,6 +7,8 @@ using System.Web;
 
 namespace projectMotosel.Models
 {
+    /* This is assumed to be a ROW in PickUpOrder model*/
+    // TODO: Write 1-n relationship
     public class PickUpOrder
     {
         [Key]

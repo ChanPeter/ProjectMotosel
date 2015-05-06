@@ -6,6 +6,8 @@ using System.Web;
 
 namespace projectMotosel.Models
 {
+    /* This is assumed to be a ROW in Invoice model*/
+    // TODO: Write 1-n relationship
     public class InvoiceOrderInfo
     {
         [Key]
