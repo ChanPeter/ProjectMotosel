@@ -11,15 +11,15 @@ namespace projectMotosel.Models
     /* This is assumed to be a ROW in Invoice model*/
     public class InvoiceOrderInfo
     {
-        [Key]
+        [Key, Column(Order = 0)]
         public int InvoiceOrderInfoId { get; set; }
+        [Key, Column(Order = 1)]
+        public string SKU { get; set; }
         public int InvoiceId { get; set; }
 
         [ForeignKey("InvoiceId")]
         public virtual Invoice Invoice { get; set; }
 
-        [Key]
-        public string SKU { get; set; }
         [ForeignKey("SKU")]
         public virtual Product Product { get; set; }
 

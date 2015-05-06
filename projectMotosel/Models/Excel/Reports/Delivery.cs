@@ -16,7 +16,7 @@ namespace projectMotosel.Models
 
         [ForeignKey("EmployeeId")]
         public virtual Employee Employee { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         public virtual ICollection<DeliveryList> DeliveryLists { get; set; }
 

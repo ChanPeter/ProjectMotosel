@@ -12,9 +12,9 @@ namespace projectMotosel.Models
     // TODO: Write 1-n relationship
     public class GRNOrderInfo
     {
-        [Key]
+        [Key, Column(Order = 0)]
         public int GRNOrderInfoId { get; set; }
-        [Key]
+        [Key, Column(Order = 1)]
         public string SKU { get; set; }
         // FK to Parent GoodsReceivedNote
         public int GoodsReceivedNoteId { get; set; }
