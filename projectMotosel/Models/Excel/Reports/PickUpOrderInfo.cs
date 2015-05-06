@@ -11,10 +11,10 @@ namespace projectMotosel.Models
     {
         [Key, Column(Order = 0)]
         public int PickUpOrderInfoId { get; set; }
-
         [Key, Column(Order = 1)]
         public string SKU { get; set; }
-        public int PickupOrderId { get; set; }
+
+        public string PickupOrderId { get; set; }
 
         [ForeignKey("PickupOrderId")]
         public virtual PickUpOrder PickUpOrder { get; set; }
