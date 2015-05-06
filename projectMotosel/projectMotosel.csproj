@@ -181,6 +181,10 @@
     <Compile Include="Models\Excel\Employee.cs" />
     <Compile Include="Models\Excel\ExcelContext.cs" />
     <Compile Include="Models\Excel\GoodsReceivedNote.cs" />
+    <Compile Include="Models\Excel\GRNOrderInfo.cs" />
+    <Compile Include="Models\Excel\Invoice.cs" />
+    <Compile Include="Models\Excel\InvoiceOrderInfo.cs" />
+    <Compile Include="Models\Excel\PickUpOrder.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
