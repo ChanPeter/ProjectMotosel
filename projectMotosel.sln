@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projectMotosel", "projectMotosel\projectMotosel.csproj", "{E0DF5A2B-AED8-43F7-B2F6-383D919DEBE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projectMotosel.Tests", "projectMotosel.Tests\projectMotosel.Tests.csproj", "{27F8FBC4-861F-4749-B6F0-10879B8AAF6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0DF5A2B-AED8-43F7-B2F6-383D919DEBE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0DF5A2B-AED8-43F7-B2F6-383D919DEBE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0DF5A2B-AED8-43F7-B2F6-383D919DEBE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0DF5A2B-AED8-43F7-B2F6-383D919DEBE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F8FBC4-861F-4749-B6F0-10879B8AAF6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F8FBC4-861F-4749-B6F0-10879B8AAF6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F8FBC4-861F-4749-B6F0-10879B8AAF6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F8FBC4-861F-4749-B6F0-10879B8AAF6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
