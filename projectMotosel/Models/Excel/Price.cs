@@ -13,13 +13,13 @@ namespace projectMotosel.Models
         [Key]
         public string ProductId { get; set; }
         [Key]
-        public int CustId { get; set; }
+        public int CustomerId { get; set; }
 
         public decimal? PriceValue { get; set; }
 
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
-        [ForeignKey("CustId")]
+        [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
     }
 }

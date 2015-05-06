@@ -14,7 +14,7 @@ namespace projectMotosel.Models
         [Key]
         public string PickUpOrderId { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         public int SoldToId { get; set; }
 

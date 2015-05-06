@@ -12,13 +12,13 @@ namespace projectMotosel.Models
         [Key]
         public int GoodsReceivedNoteId { get; set; }
         [Required]
-        public int CustId { get; set; }
+        public int CustomerId { get; set; }
         [Required]
-        public int EmpId { get; set; }
+        public int EmployeeId { get; set; }
 
-        [ForeignKey("CustId")]
+        [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
-        [ForeignKey("EmpId")]
+        [ForeignKey("EmployeeId")]
         public virtual Employee Employee { get; set; }
 
         [Required]

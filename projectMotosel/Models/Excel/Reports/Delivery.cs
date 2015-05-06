@@ -12,9 +12,9 @@ namespace projectMotosel.Models
         [Key]
         public int DeliveryId { get; set; }
         [Required]
-        public int EmpId { get; set; }
+        public int EmployeeId { get; set; }
 
-        [ForeignKey("EmpId")]
+        [ForeignKey("EmployeeId")]
         public virtual Employee Employee { get; set; }
         public DateTime Date { get; set; }
 

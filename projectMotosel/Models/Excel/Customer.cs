@@ -9,19 +9,19 @@ namespace projectMotosel.Models
     public class Customer
     {
         [Key]
-        public int CustId { get; set; }
+        public int CustomerId { get; set; }
 
         [Required]
-        public string CustName { get; set; }
+        public string Name { get; set; }
 
-        public string CustStreet { get; set; }
+        public string Street { get; set; }
 
-        public string CustCity { get; set; }
+        public string City { get; set; }
 
-        public string CustProv { get; set; }
+        public string Prov { get; set; }
 
-        public string CustPostCode { get; set; }
+        public string PostCode { get; set; }
 
-        public string CustPhone { get; set; }
+        public string Phone { get; set; }
     }
 }
