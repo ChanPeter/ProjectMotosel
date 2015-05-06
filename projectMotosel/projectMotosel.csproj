@@ -176,16 +176,16 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Excel\Customer.cs" />
-    <Compile Include="Models\Excel\Delivery.cs" />
-    <Compile Include="Models\Excel\DeliveryList.cs" />
+    <Compile Include="Models\Excel\Reports\Delivery.cs" />
+    <Compile Include="Models\Excel\Reports\DeliveryList.cs" />
     <Compile Include="Models\Excel\Employee.cs" />
     <Compile Include="Models\Excel\ExcelContext.cs" />
-    <Compile Include="Models\Excel\GoodsReceivedNote.cs" />
-    <Compile Include="Models\Excel\GRNOrderInfo.cs" />
-    <Compile Include="Models\Excel\Invoice.cs" />
-    <Compile Include="Models\Excel\InvoiceOrderInfo.cs" />
-    <Compile Include="Models\Excel\PickUpOrder.cs" />
-    <Compile Include="Models\Excel\PickUpOrderInfo.cs" />
+    <Compile Include="Models\Excel\Reports\GoodsReceivedNote.cs" />
+    <Compile Include="Models\Excel\Reports\GRNOrderInfo.cs" />
+    <Compile Include="Models\Excel\Reports\Invoice.cs" />
+    <Compile Include="Models\Excel\Reports\InvoiceOrderInfo.cs" />
+    <Compile Include="Models\Excel\Reports\PickUpOrder.cs" />
+    <Compile Include="Models\Excel\Reports\PickUpOrderInfo.cs" />
     <Compile Include="Models\Excel\Price.cs" />
     <Compile Include="Models\Excel\Product.cs" />
     <Compile Include="Models\IdentityModels.cs" />

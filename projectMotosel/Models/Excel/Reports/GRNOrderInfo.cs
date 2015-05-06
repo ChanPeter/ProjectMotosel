@@ -16,11 +16,17 @@ namespace projectMotosel.Models
         public int GRNOrderInfoId { get; set; }
         [Key]
         public string SKU { get; set; }
+        // FK to Parent GoodsReceivedNote
+        public int GoodsReceivedNoteId { get; set; }
 
         [ForeignKey("SKU")]
         public virtual Product Product { get; set; }
+
         [Required]
         public int Quantity { get; set; }
+
+        [ForeignKey("GoodsReceivedNoteId")]
+        public virtual GoodsReceivedNote GoodsReceivedNotes { get; set; }
 
         public int PONumber { get; set; }
     }

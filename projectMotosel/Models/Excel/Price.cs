@@ -15,7 +15,7 @@ namespace projectMotosel.Models
         [Key]
         public int CustId { get; set; }
 
-        public double PriceValue { get; set; }
+        public decimal? PriceValue { get; set; }
 
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }

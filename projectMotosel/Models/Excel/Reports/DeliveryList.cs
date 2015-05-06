@@ -14,10 +14,9 @@ namespace projectMotosel.Models
         public int DeliveryListId { get; set; }
         [Required]
         public int CustId { get; set; }
+        [Required]
         public int EmpId { get; set; }
         public int DeliveryId { get; set; }
-        
-        [Key]
         public string SKU { get; set; }
 
 

@@ -24,6 +24,8 @@ namespace projectMotosel.Models
         [Required]
         public DateTime Date { get; set; }
         public string Notes { get; set; }
+
+        public virtual ICollection<GRNOrderInfo> GRNOrderInfos { get; set; }
         
     }
 }

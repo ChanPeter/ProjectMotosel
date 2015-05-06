@@ -24,5 +24,7 @@ namespace projectMotosel.Models
         public virtual Customer SoldToCustomer { get; set; }
         [ForeignKey("ShipToId")]
         public virtual Customer ShipToCustomer { get; set; }
+
+        public virtual ICollection<PickUpOrderInfo> PickUpOrderInfos { get; set; }
     }
 }
