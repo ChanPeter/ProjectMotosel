@@ -175,6 +175,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Excel\Customer.cs" />
+    <Compile Include="Models\Excel\Delivery.cs" />
+    <Compile Include="Models\Excel\DeliveryList.cs" />
+    <Compile Include="Models\Excel\Employee.cs" />
+    <Compile Include="Models\Excel\ExcelContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
