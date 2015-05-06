@@ -9,12 +9,13 @@ namespace projectMotosel.Models
     public class InvoiceOrderInfo
     {
         [Key]
-        public int invoiceNo { get; set; }
+        public int InvoiceOrderInfoId { get; set; }
 
         [Key]
         public string SKU { get; set; }
 
-        public int quantity { get; set; }
+        [Required]
+        public int Quantity { get; set; }
 
         public string PONumber { get; set; }
     }

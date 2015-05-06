@@ -9,10 +9,15 @@ namespace projectMotosel.Models
     public class GRNOrderInfo
     {
         [Key]
-        public int grnNo { get; set; }
+        public int GRNOrderInfoId { get; set; }
         [Key]
         public string SKU { get; set; }
-        public int quantity { get; set; }
-        public int poBox { get; set; }
+
+        [Required]
+        public int Quantity { get; set; }
+
+
+        //TODO: Shouldn't this be a reference to Customer.poBox?
+        public int PONumber { get; set; }
     }
 }

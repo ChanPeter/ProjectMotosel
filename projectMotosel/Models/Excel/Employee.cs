@@ -9,9 +9,12 @@ namespace projectMotosel.Models
     public class Employee
     {
         [Key]
-        public string empNo { get; set; }
-        public string empFirstName { get; set; }
-        public string empLastName { get; set; }
-        public int commRate { get; set; }
+        public string EmpId { get; set; }
+        [Required]
+        public string EmpFirstName { get; set; }
+        [Required]
+        public string EmpLastName { get; set; }
+        [Required]
+        public int CommRate { get; set; }
     }
 }

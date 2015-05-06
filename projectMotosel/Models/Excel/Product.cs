@@ -8,10 +8,11 @@ namespace MotoselProject.Models
 {
     public class Product
     {
+        // ProductId == SKU
         [Key]
-        public string SKU { get; set; }
+        public string ProductId { get; set; }
 
-        public string description { get; set; }
+        public string Description { get; set; }
 
         public string PKG { get; set; }
 
@@ -19,6 +20,6 @@ namespace MotoselProject.Models
 
         public bool SYN { get; set; }
 
-        public int volume { get; set; }
+        public int Volume { get; set; }
     }
 }

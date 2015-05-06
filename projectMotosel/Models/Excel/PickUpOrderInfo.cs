@@ -9,15 +9,16 @@ namespace projectMotosel.Models
     public class PickUpOrderInfo
     {
         [Key]
-        public int orderNo { get; set; }
+        public int PickUpOrderInfoId { get; set; }
 
         [Key]
         public string SKU { get; set; }
 
-        public int quantity { get; set; }
+        [Required]
+        public int Quantity { get; set; }
 
         public string PONumber { get; set; }
 
-        public string notes { get; set; }
+        public string Notes { get; set; }
     }
 }

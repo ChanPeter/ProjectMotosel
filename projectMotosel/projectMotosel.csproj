@@ -185,6 +185,9 @@
     <Compile Include="Models\Excel\Invoice.cs" />
     <Compile Include="Models\Excel\InvoiceOrderInfo.cs" />
     <Compile Include="Models\Excel\PickUpOrder.cs" />
+    <Compile Include="Models\Excel\PickUpOrderInfo.cs" />
+    <Compile Include="Models\Excel\Price.cs" />
+    <Compile Include="Models\Excel\Product.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
