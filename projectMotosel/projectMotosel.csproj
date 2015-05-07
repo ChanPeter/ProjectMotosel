@@ -173,7 +173,8 @@
     <Compile Include="Controllers\Excel\EmployeesController.cs" />
     <Compile Include="Controllers\Excel\PricesController.cs" />
     <Compile Include="Controllers\Excel\ProductsController.cs" />
-    <Compile Include="Controllers\Excel\SalesController.cs" />
+    <Compile Include="Controllers\Excel\Sales\SaleRowsController.cs" />
+    <Compile Include="Controllers\Excel\Sales\SalesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -182,6 +183,14 @@
     <Compile Include="Migrations\ExcelMigrations\201505070251083_Initial_Create.cs" />
     <Compile Include="Migrations\ExcelMigrations\201505070251083_Initial_Create.Designer.cs">
       <DependentUpon>201505070251083_Initial_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ExcelMigrations\201505070439577_Addes_SaleForm.cs" />
+    <Compile Include="Migrations\ExcelMigrations\201505070439577_Addes_SaleForm.Designer.cs">
+      <DependentUpon>201505070439577_Addes_SaleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ExcelMigrations\201505070513101_changed_stuff.cs" />
+    <Compile Include="Migrations\ExcelMigrations\201505070513101_changed_stuff.Designer.cs">
+      <DependentUpon>201505070513101_changed_stuff.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ExcelMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -286,6 +295,11 @@
     <Content Include="Views\Sales\Edit.cshtml" />
     <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Sales\_SaleRowPartial.cshtml" />
+    <Content Include="Views\SaleRows\Create.cshtml" />
+    <Content Include="Views\SaleRows\Delete.cshtml" />
+    <Content Include="Views\SaleRows\Details.cshtml" />
+    <Content Include="Views\SaleRows\Edit.cshtml" />
+    <Content Include="Views\SaleRows\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -302,6 +316,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\ExcelMigrations\201505070251083_Initial_Create.resx">
       <DependentUpon>201505070251083_Initial_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ExcelMigrations\201505070439577_Addes_SaleForm.resx">
+      <DependentUpon>201505070439577_Addes_SaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ExcelMigrations\201505070513101_changed_stuff.resx">
+      <DependentUpon>201505070513101_changed_stuff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
