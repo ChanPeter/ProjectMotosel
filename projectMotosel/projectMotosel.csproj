@@ -178,6 +178,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ExcelMigrations\201505070251083_Initial_Create.cs" />
+    <Compile Include="Migrations\ExcelMigrations\201505070251083_Initial_Create.Designer.cs">
+      <DependentUpon>201505070251083_Initial_Create.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ExcelMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Excel\Customer.cs" />
@@ -287,6 +291,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ExcelMigrations\201505070251083_Initial_Create.resx">
+      <DependentUpon>201505070251083_Initial_Create.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

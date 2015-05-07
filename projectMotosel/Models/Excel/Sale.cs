@@ -13,10 +13,8 @@ namespace projectMotosel.Models.Excel
         {
             SaleRows = new List<SaleRow>();
         }
-
         [Key]
         public int SaleId { get; set; }
-        [Required]
         public int SoldToId { get; set; }
         public int ShipToId { get; set; }
         [Required]
