@@ -178,25 +178,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ExcelMigrations\201505062308143_Removed_[Required]_in_DeliveryList.CustomerId.cs" />
-    <Compile Include="Migrations\ExcelMigrations\201505062308143_Removed_[Required]_in_DeliveryList.CustomerId.Designer.cs">
-      <DependentUpon>201505062308143_Removed_[Required]_in_DeliveryList.CustomerId.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\ExcelMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Excel\Customer.cs" />
-    <Compile Include="Models\Excel\Reports\Delivery.cs" />
-    <Compile Include="Models\Excel\Reports\DeliveryList.cs" />
     <Compile Include="Models\Excel\Employee.cs" />
     <Compile Include="Models\Excel\ExcelContext.cs" />
-    <Compile Include="Models\Excel\Reports\GoodsReceivedNote.cs" />
-    <Compile Include="Models\Excel\Reports\GRNOrderInfo.cs" />
     <Compile Include="Models\Excel\Reports\Invoice.cs" />
-    <Compile Include="Models\Excel\Reports\InvoiceOrderInfo.cs" />
+    <Compile Include="Models\Excel\Reports\InvoiceRow.cs" />
     <Compile Include="Models\Excel\Reports\PickUpOrder.cs" />
-    <Compile Include="Models\Excel\Reports\PickUpOrderInfo.cs" />
+    <Compile Include="Models\Excel\Reports\PickUpOrderRow.cs" />
     <Compile Include="Models\Excel\Price.cs" />
     <Compile Include="Models\Excel\Product.cs" />
+    <Compile Include="Models\Excel\Sale.cs" />
+    <Compile Include="Models\Excel\SaleRow.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -205,6 +199,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="docs\MigrationCommands.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -284,6 +279,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Excel\Reports\" />
+    <Folder Include="Models\Excel\Entities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -291,11 +287,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\ExcelMigrations\201505062308143_Removed_[Required]_in_DeliveryList.CustomerId.resx">
-      <DependentUpon>201505062308143_Removed_[Required]_in_DeliveryList.CustomerId.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

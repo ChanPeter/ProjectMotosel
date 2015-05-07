@@ -1,0 +1,2 @@
+﻿# Run once per project (not necessary unless reset dbase)
+enable-migrations -ContextTypeName ExcelContext -MigrationsDirectory Migrations\ExcelMigrations
