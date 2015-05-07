@@ -6,26 +6,25 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace projectMotosel.Models
+namespace projectMotosel.Models.Excel
 {
-    /* This is assumed to be a ROW in Invoice model*/
-    public class InvoiceOrderInfo
+    public class SaleRow
     {
         [Key]
-        public int InvoiceOrderInfoId { get; set; }
-        public int InvoiceId { get; set; }
-
-        [ForeignKey("InvoiceId")]
-        public virtual Invoice Invoice { get; set; }
-
-        [Key]
+        public int SaleRowId { get; set; }
+        [Required]
+        public int SaleId { get; set; }
+        [Required]
         public string SKU { get; set; }
+
+        [ForeignKey("SaleId")]
+        public virtual Sale Sale { get; set; }
         [ForeignKey("SKU")]
         public virtual Product Product { get; set; }
 
-        [Required]
+        [Required] 
         public int Quantity { get; set; }
 
-        public string PONumber { get; set; }
+        public string Notes { get; set; }
     }
 }

@@ -8,17 +8,13 @@ using System.Web;
 
 namespace projectMotosel.Models
 {
-    public class Invoice
+    public class PickUpOrderInfo
     {
         [Key]
-        public int InvoiceId { get; set; }
+        public int PickUpOrderRowId { get; set; }
+        public int SaleRowId { get; set; }
 
-        [Required]
-        public int SaleId { get; set; }
-
-        [ForeignKey("SaleId")]
-        public virtual Sale Sale { get; set; }
-
-        public virtual ICollection<InvoiceRow> InvoiceRows { get; set; }
+        [ForeignKey("SaleRowId")]
+        public virtual SaleRow SaleRow { get; set; }
     }
 }

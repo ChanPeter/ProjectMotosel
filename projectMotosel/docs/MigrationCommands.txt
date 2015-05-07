@@ -1,0 +1,8 @@
+﻿# Run once per project (not necessary unless reset dbase)
+enable-migrations -ContextTypeName ExcelContext -MigrationsDirectory Migrations\ExcelMigrations
+
+# Run when change models (Change comment-string)
+add-migration -ConfigurationTypeName projectMotosel.Migrations.ExcelMigrations.Configuration "Initial_Create"
+
+# Run when database is changed (e.g. after "add-migration")
+update-database -ConfigurationTypeName projectMotosel.Migrations.ExcelMigrations.Configuration

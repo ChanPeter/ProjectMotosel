@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projectMotosel.Models.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,17 +15,9 @@ namespace projectMotosel.Models
         [Key]
         public string PickUpOrderId { get; set; }
 
-        public DateTime? Date { get; set; }
+        public int SaleId { get; set; }
 
-        public int SoldToId { get; set; }
-
-        public int ShipToId { get; set; }
-
-        [ForeignKey("SoldToId")]
-        public virtual Customer SoldToCustomer { get; set; }
-        [ForeignKey("ShipToId")]
-        public virtual Customer ShipToCustomer { get; set; }
-
-        public virtual ICollection<PickUpOrderInfo> PickUpOrderInfos { get; set; }
+        [ForeignKey("SaleId")]
+        public virtual Sale Sale { get; set; }
     }
 }

@@ -10,9 +10,9 @@ namespace projectMotosel.Models
 {
     public class Price
     {
-        [Key]
+        [Key, Column(Order = 0)]
         public string ProductId { get; set; }
-        [Key]
+        [Key, Column(Order = 1)]
         public int CustomerId { get; set; }
 
         public decimal? PriceValue { get; set; }

@@ -169,25 +169,42 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Excel\CustomersController.cs" />
+    <Compile Include="Controllers\Excel\EmployeesController.cs" />
+    <Compile Include="Controllers\Excel\PricesController.cs" />
+    <Compile Include="Controllers\Excel\ProductsController.cs" />
+    <Compile Include="Controllers\Excel\Sales\SaleRowsController.cs" />
+    <Compile Include="Controllers\Excel\Sales\SalesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ExcelMigrations\201505070251083_Initial_Create.cs" />
+    <Compile Include="Migrations\ExcelMigrations\201505070251083_Initial_Create.Designer.cs">
+      <DependentUpon>201505070251083_Initial_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ExcelMigrations\201505070439577_Addes_SaleForm.cs" />
+    <Compile Include="Migrations\ExcelMigrations\201505070439577_Addes_SaleForm.Designer.cs">
+      <DependentUpon>201505070439577_Addes_SaleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ExcelMigrations\201505070513101_changed_stuff.cs" />
+    <Compile Include="Migrations\ExcelMigrations\201505070513101_changed_stuff.Designer.cs">
+      <DependentUpon>201505070513101_changed_stuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ExcelMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Excel\Customer.cs" />
-    <Compile Include="Models\Excel\Reports\Delivery.cs" />
-    <Compile Include="Models\Excel\Reports\DeliveryList.cs" />
     <Compile Include="Models\Excel\Employee.cs" />
     <Compile Include="Models\Excel\ExcelContext.cs" />
-    <Compile Include="Models\Excel\Reports\GoodsReceivedNote.cs" />
-    <Compile Include="Models\Excel\Reports\GRNOrderInfo.cs" />
     <Compile Include="Models\Excel\Reports\Invoice.cs" />
-    <Compile Include="Models\Excel\Reports\InvoiceOrderInfo.cs" />
+    <Compile Include="Models\Excel\Reports\InvoiceRow.cs" />
     <Compile Include="Models\Excel\Reports\PickUpOrder.cs" />
-    <Compile Include="Models\Excel\Reports\PickUpOrderInfo.cs" />
+    <Compile Include="Models\Excel\Reports\PickUpOrderRow.cs" />
     <Compile Include="Models\Excel\Price.cs" />
     <Compile Include="Models\Excel\Product.cs" />
+    <Compile Include="Models\Excel\Sales\Sale.cs" />
+    <Compile Include="Models\Excel\Sales\SaleRow.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,10 +213,12 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="docs\MigrationCommands.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -249,9 +268,43 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Prices\Create.cshtml" />
+    <Content Include="Views\Prices\Delete.cshtml" />
+    <Content Include="Views\Prices\Details.cshtml" />
+    <Content Include="Views\Prices\Edit.cshtml" />
+    <Content Include="Views\Prices\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Sales\Create.cshtml" />
+    <Content Include="Views\Sales\Delete.cshtml" />
+    <Content Include="Views\Sales\Details.cshtml" />
+    <Content Include="Views\Sales\Edit.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
+    <Content Include="Views\Sales\_SaleRowPartial.cshtml" />
+    <Content Include="Views\SaleRows\Create.cshtml" />
+    <Content Include="Views\SaleRows\Delete.cshtml" />
+    <Content Include="Views\SaleRows\Details.cshtml" />
+    <Content Include="Views\SaleRows\Edit.cshtml" />
+    <Content Include="Views\SaleRows\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Excel\Reports\" />
+    <Folder Include="Models\Excel\Entities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -259,6 +312,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ExcelMigrations\201505070251083_Initial_Create.resx">
+      <DependentUpon>201505070251083_Initial_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ExcelMigrations\201505070439577_Addes_SaleForm.resx">
+      <DependentUpon>201505070439577_Addes_SaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ExcelMigrations\201505070513101_changed_stuff.resx">
+      <DependentUpon>201505070513101_changed_stuff.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
