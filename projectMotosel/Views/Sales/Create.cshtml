@@ -7,7 +7,7 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
@@ -62,19 +62,32 @@
                 @Html.ValidationMessageFor(model => model.PONumber, "", new { @class = "text-danger" })
             </div>
         </div>
-    </div>
+
+        <div id="rows" class="rows">
+            @foreach (var item in Model.SaleRows)
+            {
+                Html.RenderAction("RenderSaleRowPartial", "Sales");
+            }
+        </div>
+        <div class="btn btn-default">
+            @Ajax.ActionLink("Add Product",
+                "AddProduct",
+                "Sales",
+                new { SoldToId = ViewBag.SoldToId, ShipToId = ViewBag.ShipToId, EmployeeId = ViewBag.EmployeeId, SaleDate = ViewBag.SaleDate, ShippingNo = ViewBag.ShippingNo, PONumber = ViewBag.PONumber },
+                new AjaxOptions
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "rows"
+                }
+            )
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
- 
-    <!-- ERROR is here .. -->
-    foreach (var item in Model.SaleRows)
-    {
-        /* Do stuff here */
-        @Html.LabelFor(modelItem => item.SKU, htmlAttributes: new { @class = "control-label col-md-2" })
-    }
+    </div>
+
 }
 
 <div>

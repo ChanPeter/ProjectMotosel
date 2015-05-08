@@ -12,6 +12,7 @@ namespace projectMotosel.Models.Excel
         public Sale()
         {
             SaleRows = new List<SaleRow>();
+            SaleRows.Add(new SaleRow());
         }
         [Key]
         public int SaleId { get; set; }
@@ -34,5 +35,25 @@ namespace projectMotosel.Models.Excel
         public string PONumber { get; set; }
 
         public virtual ICollection<SaleRow> SaleRows { get; set; }
+
+        
+        public override string ToString()
+        {
+            string toStr =
+                "SaleId:" + SaleId + "," +
+                "SoldToId:" + SoldToId + "," +
+                "ShipToId:" + ShipToId + "," +
+                "EmployeeId:" + EmployeeId + "," +
+                "Employee:" + Employee + "," +
+                "SoldToCustomer:" + SoldToCustomer + "," +
+                "ShipToCustomer:" + ShipToCustomer + "," +
+                "SaleDate:" + SaleDate + "," +
+                "ShippingNo:" + ShippingNo + "," +
+                "PONumber:" + PONumber + "," +
+                "PONumber:" + PONumber + "," +
+                "SaleRows.Count:" + SaleRows.Count;
+
+            return toStr;
+        }
     }
 }

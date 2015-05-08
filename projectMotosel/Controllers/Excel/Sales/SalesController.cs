@@ -15,7 +15,7 @@ namespace projectMotosel.Controllers.Excel.Sales
     public class SalesController : Controller
     {
         private ExcelContext db = new ExcelContext();
-
+        private Sale sale;
         // GET: Sales
         public async Task<ActionResult> Index()
         {
@@ -41,10 +41,13 @@ namespace projectMotosel.Controllers.Excel.Sales
         // GET: Sales/Create
         public ActionResult Create()
         {
+            if(sale == null)
+                sale = new Sale();
+
             ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeId", "FirstName");
             ViewBag.ShipToId = new SelectList(db.Customers, "CustomerId", "Name");
             ViewBag.SoldToId = new SelectList(db.Customers, "CustomerId", "Name");
-            return View();
+            return View(sale);
         }
 
         // POST: Sales/Create
@@ -52,7 +55,7 @@ namespace projectMotosel.Controllers.Excel.Sales
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "SaleId,SoldToId,ShipToId,EmployeeId,SaleDate,ShippingNo,PONumber")] Sale sale)
+        public async Task<ActionResult> Create([Bind(Include = "SaleId,SoldToId,ShipToId,EmployeeId,SaleDate,ShippingNo,PONumber, SKU, Quantity, Notes")] Sale sale)
         {
             if (ModelState.IsValid)
             {
@@ -138,5 +141,25 @@ namespace projectMotosel.Controllers.Excel.Sales
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult RenderSaleRowPartial()
+        {
+            ViewBag.SKU = new SelectList(db.Products, "SKU", "Description");
+            Console.WriteLine("RenderSaleRowPartial()");
+            return PartialView("_SaleRowPartial");
+        }
+
+        /* This does not work right */
+        public void AddProduct(Sale _sale)
+        {
+            System.Diagnostics.Debug.WriteLine("In AddProduct()");
+
+            System.Diagnostics.Debug.WriteLine(_sale.ToString());
+
+            sale = _sale;
+
+            sale.SaleRows.Add(new SaleRow());
+        }
+
     }
 }
