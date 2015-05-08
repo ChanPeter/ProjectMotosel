@@ -41,10 +41,11 @@ namespace projectMotosel.Controllers.Excel.Sales
         // GET: Sales/Create
         public ActionResult Create()
         {
+            Sale sale = new Sale();
             ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeId", "FirstName");
             ViewBag.ShipToId = new SelectList(db.Customers, "CustomerId", "Name");
             ViewBag.SoldToId = new SelectList(db.Customers, "CustomerId", "Name");
-            return View();
+            return View(sale);
         }
 
         // POST: Sales/Create
@@ -137,6 +138,18 @@ namespace projectMotosel.Controllers.Excel.Sales
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public PartialViewResult RenderSaleRowPartial()
+        {
+            ViewBag.SKU = new SelectList(db.Products, "SKU", "Description");
+            Console.WriteLine("RenderSaleRowPartial()");
+            return PartialView("_SaleRowPartial");
+        }
+
+        public void AddProduct()
+        {
+
         }
     }
 }

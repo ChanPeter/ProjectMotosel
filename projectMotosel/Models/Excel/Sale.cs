@@ -12,6 +12,7 @@ namespace projectMotosel.Models.Excel
         public Sale()
         {
             SaleRows = new List<SaleRow>();
+            SaleRows.Add(new SaleRow());
         }
         [Key]
         public int SaleId { get; set; }

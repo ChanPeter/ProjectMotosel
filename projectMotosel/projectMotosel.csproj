@@ -192,6 +192,10 @@
     <Compile Include="Migrations\ExcelMigrations\201505070513101_changed_stuff.Designer.cs">
       <DependentUpon>201505070513101_changed_stuff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ExcelMigrations\201505071807000_Sale_constructor.cs" />
+    <Compile Include="Migrations\ExcelMigrations\201505071807000_Sale_constructor.Designer.cs">
+      <DependentUpon>201505071807000_Sale_constructor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ExcelMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Excel\Customer.cs" />
@@ -203,8 +207,8 @@
     <Compile Include="Models\Excel\Reports\PickUpOrderRow.cs" />
     <Compile Include="Models\Excel\Price.cs" />
     <Compile Include="Models\Excel\Product.cs" />
-    <Compile Include="Models\Excel\Sales\Sale.cs" />
-    <Compile Include="Models\Excel\Sales\SaleRow.cs" />
+    <Compile Include="Models\Excel\Sale.cs" />
+    <Compile Include="Models\Excel\SaleRow.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -322,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ExcelMigrations\201505070513101_changed_stuff.resx">
       <DependentUpon>201505070513101_changed_stuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ExcelMigrations\201505071807000_Sale_constructor.resx">
+      <DependentUpon>201505071807000_Sale_constructor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
