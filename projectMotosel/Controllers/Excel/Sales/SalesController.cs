@@ -41,11 +41,12 @@ namespace projectMotosel.Controllers.Excel.Sales
         // GET: Sales/Create
         public ActionResult Create()
         {
-            Sale sale = new Sale();
+            Sale _sale = new Sale();
+
             ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeId", "FirstName");
             ViewBag.ShipToId = new SelectList(db.Customers, "CustomerId", "Name");
             ViewBag.SoldToId = new SelectList(db.Customers, "CustomerId", "Name");
-            return View(sale);
+            return View(_sale);
         }
 
         // POST: Sales/Create
@@ -53,7 +54,7 @@ namespace projectMotosel.Controllers.Excel.Sales
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "SaleId,SoldToId,ShipToId,EmployeeId,SaleDate,ShippingNo,PONumber")] Sale sale)
+        public async Task<ActionResult> Create([Bind(Include = "SaleId,SoldToId,ShipToId,EmployeeId,SaleDate,ShippingNo,PONumber, SKU, Quantity, Notes")] Sale sale)
         {
             if (ModelState.IsValid)
             {
@@ -140,16 +141,26 @@ namespace projectMotosel.Controllers.Excel.Sales
             base.Dispose(disposing);
         }
 
-        public PartialViewResult RenderSaleRowPartial()
+        public ActionResult RenderSaleRowPartial()
         {
             ViewBag.SKU = new SelectList(db.Products, "SKU", "Description");
             Console.WriteLine("RenderSaleRowPartial()");
             return PartialView("_SaleRowPartial");
         }
 
-        public void AddProduct()
+        public void AddProduct(int id)
         {
+            System.Diagnostics.Debug.WriteLine("In AddProduct()");
 
+            Sale sale = db.Sales.Find(id);
+
+            if (sale == null)
+                System.Diagnostics.Debug.WriteLine("_sale is NULL");
+            else
+                System.Diagnostics.Debug.WriteLine("_sale is NOT null");
+
+            if(sale != null)
+                sale.SaleRows.Add(new SaleRow());
         }
     }
 }

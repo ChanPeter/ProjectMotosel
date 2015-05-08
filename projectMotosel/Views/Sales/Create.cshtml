@@ -63,12 +63,23 @@
             </div>
         </div>
 
-        @foreach (var item in Model.SaleRows)
-        {
-            Html.RenderAction("RenderSaleRowPartial", "Sales");
-        }
+        <div id="rows" class="rows">
+            @foreach (var item in Model.SaleRows)
+            {
+                Html.RenderAction("RenderSaleRowPartial", "Sales");
+            }
+        </div>
         <div class="btn btn-default">
-            @Html.ActionLink("Add Product", "AddProduct")
+            @Ajax.ActionLink("Add Product",
+                "AddProduct",
+                "Sales",
+                new { id = Model.SaleId },
+                new AjaxOptions
+                {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "rows"
+                }
+            )
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
