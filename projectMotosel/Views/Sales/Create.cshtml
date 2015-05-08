@@ -73,7 +73,7 @@
             @Ajax.ActionLink("Add Product",
                 "AddProduct",
                 "Sales",
-                new { id = Model.SaleId },
+                new { SoldToId = ViewBag.SoldToId, ShipToId = ViewBag.ShipToId, EmployeeId = ViewBag.EmployeeId, SaleDate = ViewBag.SaleDate, ShippingNo = ViewBag.ShippingNo, PONumber = ViewBag.PONumber },
                 new AjaxOptions
                 {
                     InsertionMode = InsertionMode.Replace,

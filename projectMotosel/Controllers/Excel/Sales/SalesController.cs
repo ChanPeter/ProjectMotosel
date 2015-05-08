@@ -15,7 +15,7 @@ namespace projectMotosel.Controllers.Excel.Sales
     public class SalesController : Controller
     {
         private ExcelContext db = new ExcelContext();
-
+        private Sale sale;
         // GET: Sales
         public async Task<ActionResult> Index()
         {
@@ -41,12 +41,13 @@ namespace projectMotosel.Controllers.Excel.Sales
         // GET: Sales/Create
         public ActionResult Create()
         {
-            Sale _sale = new Sale();
+            if(sale == null)
+                sale = new Sale();
 
             ViewBag.EmployeeId = new SelectList(db.Employees, "EmployeeId", "FirstName");
             ViewBag.ShipToId = new SelectList(db.Customers, "CustomerId", "Name");
             ViewBag.SoldToId = new SelectList(db.Customers, "CustomerId", "Name");
-            return View(_sale);
+            return View(sale);
         }
 
         // POST: Sales/Create
@@ -148,19 +149,17 @@ namespace projectMotosel.Controllers.Excel.Sales
             return PartialView("_SaleRowPartial");
         }
 
-        public void AddProduct(int id)
+        /* This does not work right */
+        public void AddProduct(Sale _sale)
         {
             System.Diagnostics.Debug.WriteLine("In AddProduct()");
 
-            Sale sale = db.Sales.Find(id);
+            System.Diagnostics.Debug.WriteLine(_sale.ToString());
 
-            if (sale == null)
-                System.Diagnostics.Debug.WriteLine("_sale is NULL");
-            else
-                System.Diagnostics.Debug.WriteLine("_sale is NOT null");
+            sale = _sale;
 
-            if(sale != null)
-                sale.SaleRows.Add(new SaleRow());
+            sale.SaleRows.Add(new SaleRow());
         }
+
     }
 }
